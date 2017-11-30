@@ -1,0 +1,90 @@
+[
+    {
+        "id": "ea2725a3.22b708",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "6335f2de.dd16dc",
+        "type": "dbfunction",
+        "z": "ea2725a3.22b708",
+        "name": "",
+        "func": "\n//container object\n const {topic:msg_topic,_msgid:msg__msgid,payload:msg_payload} = msg;\n \n// Create a new JavaScript Date object based on the timestamp\n// multiplied by 1000 so that the argument is in milliseconds, not seconds.\nvar date = new Date(msg.payload);\n// Hours part from the timestamp\nvar hours = date.getHours();\n// Minutes part from the timestamp\nvar minutes = \"0\" + date.getMinutes();\n// Seconds part from the timestamp\nvar seconds = \"0\" + date.getSeconds();\n\n// Will display time in 10:30:23 format\nvar formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);\n\nreturn {\t\t\t\t\n  any:formattedTime,\n}\n",
+        "outputs": 1,
+        "inputtypedef": "",
+        "outputtypedef": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"any\": {\n            \"type\": \"literal\"\n        }\n    }\n}",
+        "noerr": 0,
+        "x": 424,
+        "y": 233,
+        "wires": [
+            [
+                "255157d2.1d7428",
+                "4f14fc82.485804"
+            ]
+        ]
+    },
+    {
+        "id": "82a5e613.bfc558",
+        "type": "inject",
+        "z": "ea2725a3.22b708",
+        "name": "inject",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": 1,
+        "crontab": "",
+        "once": false,
+        "x": 195,
+        "y": 148,
+        "wires": [
+            [
+                "6335f2de.dd16dc"
+            ]
+        ]
+    },
+    {
+        "id": "255157d2.1d7428",
+        "type": "debugger",
+        "z": "ea2725a3.22b708",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 565.5,
+        "y": 148,
+        "wires": []
+    },
+    {
+        "id": "85872267.37993",
+        "type": "app",
+        "z": "ea2725a3.22b708",
+        "name": "",
+        "appId": "webapp",
+        "layout": [
+            [
+                "4f14fc82.485804"
+            ]
+        ],
+        "x": 688,
+        "y": 311,
+        "wires": []
+    },
+    {
+        "id": "4f14fc82.485804",
+        "type": "webify",
+        "z": "ea2725a3.22b708",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<h1> {{any}} </h1>!",
+        "x": 531,
+        "y": 286,
+        "wires": [
+            [
+                "85872267.37993"
+            ]
+        ]
+    }
+]
