@@ -7,10 +7,10 @@
     "licence": "MIT",
     "databox-type": "app",
     "tags": "",
-    "homepage": "https://github.com/mdld/mdld-",
+    "homepage": "https://github.com/mdld/twitter-clock",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mdld/mdld-.git"
+        "url": "git+https://github.com/mdld/twitter-clock.git"
     },
     "packages": [
         {
