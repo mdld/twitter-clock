@@ -1,0 +1,31 @@
+{
+    "manifest-version": 1,
+    "name": "mdld-",
+    "version": "0.1.0",
+    "description": "",
+    "author": "mdld",
+    "licence": "MIT",
+    "databox-type": "app",
+    "tags": "",
+    "homepage": "https://github.com/mdld/mdld-",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdld/mdld-.git"
+    },
+    "packages": [
+        {
+            "id": "ea2725a3.22b708",
+            "name": "new package",
+            "purpose": "",
+            "required": false,
+            "datastores": [],
+            "benefits": ""
+        }
+    ],
+    "allowed-combinations": [],
+    "datasources": [],
+    "network-permissions": [],
+    "resource-requirements": {},
+    "volumes": [],
+    "export-whitelist": []
+}
